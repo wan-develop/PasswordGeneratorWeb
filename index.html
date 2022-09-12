@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <h1>Password Generator</h1>
+
+    <main>
+        
+        <!-- FIRST BOX WITH PASSWORD GENERATED AND COPY BUTTON -->
+
+        <section id="output-container">
+
+            <h2 id="output">PeEFHBIUEF$$@22</h2>
+            <a id="copy-button">
+                <svg viewBox="0 0 448 512" width="100" title="copy" fill="currentcolor">
+                <path d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56h168zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24zm120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97z" />
+                </svg>
+            </a>
+            
+        
+        </section>
+
+        <!-- SECOND BOX WITH CUSTOM PASSWORD PREFERENCES -->
+        <section id="settings-container">
+
+            <!-- CHARACTERS COUNTER / RANGE OF CHARACTERS -->
+            <h2>Character Length</h2>
+            <div id="characters-counter">
+                <input id="range-password-length" type="range" min="6" max="20" value="10">
+                <h2 id="counter-value">10</h2>
+            </div>
+
+            <!-- CHECK BOXES -->
+            <ul id="settings">
+
+                <li>
+                    <label class="check-box-label" for="allow-upper-case">
+                        <input type="checkbox" id="allow-upper-case">
+                        <div class="check-box">
+                            <svg viewBox="0 0 512 512" width="100" title="check" fill="currentcolor">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                            </svg>
+                        </div>
+                    </label>
+                    <p>Includes UpperCase Letters</p>
+                </li>
+
+                <li>
+                    <label class="check-box-label" for="allow-lower-case">
+                        <input type="checkbox" id="allow-lower-case" checked>
+                        <div class="check-box">
+                            <svg viewBox="0 0 512 512" width="100" title="check" fill="currentcolor">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                            </svg>
+                        </div>
+                    </label>
+                    <p>Includes LowerCase Letters</p>
+                </li>
+                <li>
+                    <label class="check-box-label" for="allow-numbers">
+                        <input type="checkbox" id="allow-numbers" checked>
+                        <div class="check-box">
+                            <svg viewBox="0 0 512 512" width="100" title="check" fill="currentcolor">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                            </svg>
+                        </div>
+                    </label>
+                    <p>Includes Numbers</p>
+                </li>
+                <li>
+                    <label class="check-box-label" for="allow-symbols">
+                        <input type="checkbox" id="allow-symbols">
+                        <div class="check-box">
+                            <svg viewBox="0 0 512 512" width="100" title="check" fill="currentcolor">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z" />
+                            </svg>
+                        </div>
+                    </label>
+                    <p>Includes Symbols</p>
+                </li>
+            </ul>
+
+            <!-- STRENGTH       STRONG [][][][]-->
+            <div id="strength-meter">
+                
+                <p id="meter-state">STRONG</p>
+                <div id="meter-state">
+                    <ul id="points">
+
+                        <li class="light-off" data-color="red"></li>
+                        <li class="light-off"  data-color="orange"></li>
+                        <li class="light-off" data-color="yellow"></li>
+                        <li class="light-off" data-color="#0f0"></li>
+
+                    </ul>
+                </div>
+            </div>
+        
+        
+        <!-- GENERATE BUTTON -->
+        <a id="generate-button">GENERATE</a>
+        </section>
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-size: 1.2rem;
+
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+:root {
+    --primary: #F9A825;
+    --secondary: #222;
+    --default-font-color: #ddd;
+}
+
+/* DEFAULT */
+ul {list-style: none;}
+input[type="checkbox"] {display: none}
+
+body {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient( 145deg, var(--secondary), #111 ,  var(--secondary));
+
+    min-height: 100vh;
+    width: 100vw;
+
+}
+
+body h1 {
+    color: var(--primary);
+}
+
+main {
+    /* background-color: #222; */
+    color: white;
+    margin: 10px;
+    
+
+}
+
+
+
+/* FIRST CONTAINER */
+section#output-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--secondary);
+
+    border-radius: 10px;
+    min-width: 320px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    border: solid 1px var(--primary);
+}
+
+/* PASSWORD OUTPUT */
+section#output-container h2 {
+    color: var(--default-font-color);
+    font-size: 1rem;
+}
+
+/* COPY CLIPBOARD BUTTON  */
+section#output-container a, section#output-container svg {
+    width: 2rem;
+    height: 2rem;
+
+    color: var(--primary);
+
+}
+section#output-container a:active, svg:active {
+    scale: 0.9;
+}
+
+
+/* SECOND CONTAINER  */
+section#settings-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select:  none;
+
+    border-radius: 10px;
+    background-color: var(--secondary);
+    padding: 20px 10px;
+
+    border: solid 1px var(--primary);
+}
+
+/* VALUE SELECTED FROM RANGE INPUT */
+div#characters-counter h2#counter-value {
+
+    display: inline;
+    font-size: 30px;
+    color: var(--primary);
+}
+
+
+
+/* RANGE INPUT ELEMENT */
+
+div#characters-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="range"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-appearance: none;
+    margin-right: 15px;
+    min-width: 150px;
+    width: 250px;
+
+    height: 8px;
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    background-color: #555;
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    cursor: ew-resize;
+    transition: .3s ease-in-out;
+  }
+
+input[type="range"]::-webkit-slider-thumb:active {
+    scale: 1.5;
+}
+
+
+
+/* CHECKBOXES STYLES */
+
+/* default */
+ul#settings li{ 
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    user-select: none;
+    margin-bottom: 8px; /*DISTANCE BETWEEN OPTIONS */
+}
+
+ul#settings .check-box-label .check-box {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: var(--primary);     */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+    border: solid 1px white;
+    border-radius: 4px;
+
+}
+
+/* CHECK SVG STYLE */
+.check-box-label svg {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    color: transparent;
+}
+
+.check-box-label input[type="checkbox"]:checked + div.check-box svg{
+
+    color: var(--secondary);
+
+}
+.check-box-label input[type="checkbox"]:checked + div.check-box {
+
+    background-color: var(--primary);
+
+}
+
+
+
+/* PASSWORD STRENGHT METER */
+
+div#strength-meter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 80px;
+    background-color: #111;
+
+    border-radius: 10px;
+    
+}
+
+div#strength-meter div#meter-state {
+    width: 45%;
+    height: 80%;
+    background-color: #333;
+    margin: 10px;
+}
+
+div#meter-state ul#points {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    
+}
+
+/* METER STATE LEFT SIDE */
+p#meter-state {
+
+    margin-left: 20px
+
+}
+ul#points li {
+    background-color: gray;
+    width: 15%;
+    height: 50%;
+    margin: 0 1px;
+
+    border-radius: 5px;
+
+}
+
+
+.light-off {
+    filter: saturate(0) brightness(50%);
+}
+
+
+
+/* GENERATE BUTTON */
+a#generate-button {
+    user-select: none;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+a#generate-button:active {
+    scale: 0.9;
+}
+
